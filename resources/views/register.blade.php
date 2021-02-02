@@ -23,10 +23,10 @@
                   <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
                 </div>
                     <label class="radio-inline">
-                    <input type="radio" name="farmer">Farmer
+                    <input type="radio" name="role" value='farmer'>Farmer
                     </label>
                     <label class="radio-inline">
-                    <input type="radio" name="buyer">Buyer
+                    <input type="radio" name="role" value='buyer'>Buyer
                     </label>
                     <h5></h5>
                 <button type="submit" class="btn btn-primary" style="align-items:center">Register</button>
