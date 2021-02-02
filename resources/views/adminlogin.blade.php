@@ -4,6 +4,7 @@
 <div class="container custom-login">
     <div class="row">
         <div class="col-sm-4 col-sm-offset-4">
+        <h5>Admin Login</h5>
             <form action="adminlogin" method="POST">
               @csrf
                 <div class="form-group">
