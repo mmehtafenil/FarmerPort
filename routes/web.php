@@ -19,6 +19,7 @@ Route::get('/', function () {
 
 
 Route::view("/login","login");
+Route::view("/register","register");
 Route::view("/adminlogin","adminlogin");
 Route::view("/farmerlogin","farmerlogin");
 Route::view("/buyerlogin","buyerlogin");
