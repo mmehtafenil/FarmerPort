@@ -20,9 +20,3 @@ Route::get('/', function () {
 
 Route::view("/login","login");
 Route::view("/register","register");
-Route::view("/adminlogin","adminlogin");
-Route::view("/farmerlogin","farmerlogin");
-Route::view("/buyerlogin","buyerlogin");
-Route::view("/farmerregister","farmerregister");
-Route::view("/buyerregister","buyerregister");
-Route::post("adminlogin",[UserController::class,'adminlogin']);
