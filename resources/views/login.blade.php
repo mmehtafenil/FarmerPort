@@ -10,11 +10,11 @@
       </div>
       <div class="caption">
         <h3>Farmer</h3>
-        <p><a href="/farmerlogin" class="btn btn-primary" role="button">Login</a></p>
+        <p><a href="/farmerlogin" class="btn btn-primary" role="button">Login</a><a href="/farmerregister" class="btn btn-default" role="button">Register</a></p>
       </div>
       <div class="caption">
         <h3>Buyer</h3>
-        <p><a href="/buyerlogin" class="btn btn-primary" role="button">Login</a></p>
+        <p><a href="/buyerlogin" class="btn btn-primary" role="button">Login</a><a href="/buyerregister" class="btn btn-default" role="button">Register</a></p>
       </div>
     </div>
   </div>
