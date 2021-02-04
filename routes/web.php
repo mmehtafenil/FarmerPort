@@ -14,11 +14,16 @@ use App\Http\Controllers\UserController;
 |
 */
 
-Route::get('/', function () {
-    return view('home');
+Route::get('/logout', function () {
+    Session::forget('user');
+    return redirect('/login');
 });
 
-
+Route::view("/","home");
+Route::view("/admin.index","admin.index");
+Route::view("/farmer.index","farmer.index");
+Route::view("/buyer.index","buyer.index");
 Route::view("/login","login");
 Route::view("/register","register");
 Route::post("register",[UserController::class,'register']);
+Route::post("login",[UserController::class,'login']);
