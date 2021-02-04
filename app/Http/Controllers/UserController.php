@@ -10,19 +10,46 @@ class UserController extends Controller
     //
     function login(Request $req)
     {
-
          $user= User::where(['email'=>$req->email])->first();
-         if(!$user ||  !Hash::check($req->password,$user->password))
+         if($user && Hash::check($req->password, $user->password))
          {
-             return "username or password is not correct";
+             if($user->role == 'admin'){
+                session()->put('admin',$user);
+                 return redirect('/'); //Redirect Accordingly
+             }
+            if($user->role  == 'farmer'){
+                session()->put('farmer',$user);
+                 return redirect('/'); //Redirect Accordingly
+             }
+            if($user->role  == 'buyer'){
+                session()->put('buyer',$user);
+                 return redirect('/'); //Redirect Accordingly
+             }
          }
          else
          {
-             $req->session()->put('user',$user);
-             return redirect('/');
+             return "username or password is not correct";             
          }
-        
     }
+
+    function adminLogout()
+        {
+            session()->forget('admin');
+            return redirect('/'); 
+        }
+
+    function farmerLogout()
+        {
+            session()->forget('farmer');
+            return redirect('/'); 
+        }
+
+    function buyerLogout()
+        {
+            session()->forget('buyer');
+            return redirect('/'); 
+        }
+
     function register(Request $req)
     {
         $user= new User;
@@ -34,8 +61,7 @@ class UserController extends Controller
         $user->save();
         return redirect("/login");
 
-    }
-    
+    }  
     public function update(Request $request, Profile $profile)
     {
         $request->validate([
@@ -49,6 +75,4 @@ class UserController extends Controller
                         ->with('success','Profile updated successfully');
     }
 
-    
-    
 }
