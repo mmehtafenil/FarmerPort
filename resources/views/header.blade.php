@@ -1,9 +1,10 @@
 <?php 
-use App\Http\COntrollers\ProductController;
+//use App\Http\COntrollers\ProductController;
 $total=0;
 if(Session::has('user'))
 {
-  $total=ProductController::cartItem();
+  print('Login Successful');
+  //$total=ProductController::cartItem();
 }
 ?>
 <nav class="navbar navbar-default">
